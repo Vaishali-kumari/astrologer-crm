@@ -16,8 +16,14 @@ export default function LoginPage() {
     try {
       await login(email, password);
       toast.success('Welcome back!');
-    } catch {
-      toast.error('Invalid email or password');
+    } catch (err: any) {
+      if (err?.code === 'ECONNABORTED' || err?.message?.includes('timeout')) {
+        toast.error('Server is starting up, please try again in 30 seconds...', { duration: 5000 });
+      } else if (err?.response?.status === 401) {
+        toast.error('Invalid email or password');
+      } else {
+        toast.error('Server is waking up, please try again in a moment...', { duration: 5000 });
+      }
     } finally {
       setLoading(false);
     }
