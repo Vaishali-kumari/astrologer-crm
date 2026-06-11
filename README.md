@@ -4,7 +4,7 @@ A full-stack Customer Relationship Management system built for astrologers to ma
 
 ---
 
-## 📋Project Overview
+## Project Overview
 
 **Astrologer CRM** helps practicing astrologers manage their client base efficiently. It provides a clean dashboard to view upcoming appointments, track consultation history with detailed session notes, manage payments, and never miss a client follow-up.
 
